@@ -1,18 +1,12 @@
 var request = require('supertest');
-var server = require('../server');
+var Board = require('../board/board');
 
-describe('GET /', function() {
-  it('should render ok', function(done) {
-    request(server)
-      .get('/')
-      .expect(200, done);
-  });
-});
+describe('Board', () => {
+  it('should generate board', (done) => {
+    const board = new Board(3, 4);
 
-describe('GET /contact', function() {
-  it('should render ok', function(done) {
-    request(server)
-      .get('/contact')
-      .expect(200, done);
+    console.log(board.possiblePositions)
+
+    done();
   });
 });

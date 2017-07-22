@@ -1,13 +1,17 @@
 'use strict';
+var Board = require('../board/board');
 
-exports.getBoard = (req, res) => {
+module.exports = (req, res) => {
     const width = req.params.width;
     const height = req.params.height;
 
-    // create board
+    const board = new Board(width, height);
 
-    // while board is not full:
+    while(!board.isFull()){
+
     //     get word max length of space left on board
     //     place word on board
     //     shift arbitrary amount up/down on board
+    }
+
 }
